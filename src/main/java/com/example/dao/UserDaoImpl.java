@@ -47,7 +47,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     /**
-     * 根据id删除一个用户
+     * 根据id删除一个用户(Test SourceTree 试试)
      */
     @Override
     public void remove(Integer id) {
