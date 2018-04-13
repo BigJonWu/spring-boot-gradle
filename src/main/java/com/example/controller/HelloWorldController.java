@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import com.example.domain.User;
+import lombok.val;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,8 @@ public class HelloWorldController {
     //返回的数据不是html标签的页面，而是其他某种格式的数据时（如json、xml等）使用
     @ResponseBody
     public String index() {
-        return "Hello World2！";
+        val customer = new User();
+        customer.setAge(1);
+        return "Hello World！";
     }
 }
