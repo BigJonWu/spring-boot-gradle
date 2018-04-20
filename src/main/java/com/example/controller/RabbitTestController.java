@@ -1,6 +1,8 @@
 package com.example.controller;
 
+import com.example.producer.FanoutSender;
 import com.example.producer.HelloSender;
+import com.example.producer.TopicSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +16,13 @@ public class RabbitTestController {
     @Autowired
     HelloSender helloSender;
 
-    @RequestMapping("msg")
+    @Autowired
+    TopicSender topicSender;
+
+    @Autowired
+    FanoutSender fanoutSender;
+
+    @RequestMapping("hello")
     public String index() {
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
@@ -26,11 +34,16 @@ public class RabbitTestController {
         return sendMsg;
     }
 
-    @RequestMapping("msgs")
-    public void test() {
-
-        for (int i=0;i<100;i++){
-            helloSender.send(String.valueOf(i));
-        }
+    @RequestMapping("topic")
+    public void topicSenderTest() {
+        topicSender.send();
+        topicSender.sendMessage();
+        topicSender.sendMessages();
     }
+
+    @RequestMapping("fanout")
+    public void fanoutSenderTest() {
+        fanoutSender.send();
+    }
+
 }

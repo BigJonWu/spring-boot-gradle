@@ -1,4 +1,4 @@
-package com.example.webdemo;
+package com.example;
 
 import com.example.controller.HelloWorldController;
 import org.junit.Before;
