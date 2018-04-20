@@ -5,6 +5,8 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel target="9">
+      <module name="spring-boot-gradle_main" target="1.8" />
+      <module name="spring-boot-gradle_test" target="1.8" />
       <module name="webdemo_main" target="1.8" />
       <module name="webdemo_test" target="1.8" />
     </bytecodeTargetLevel>
